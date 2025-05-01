@@ -68,8 +68,14 @@ jobs:
           name: npm-package
           path: .
 
+      - name: Prepare package directory
+        run: |
+          mkdir package
+          cp package.json README.md LICENSE package/
+          cp -r dist package/
+  
       - name: Tar Gz artifact for release
-        run: tar -czvf release.tgz dist/** README.md package.json LICENSE
+        run: tar -czvf release.tgz package
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2.2.1
