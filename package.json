@@ -6,7 +6,8 @@
   "scripts": {
     "build:css": "node build-css.js",
     "build": "tsdown",
-    "dev": "tsdown --watch"
+    "dev": "tsdown --watch",
+    "dev-example": "cd example && npm run dev"
   },
   "devDependencies": {
     "@types/react": "^19.1.2",
@@ -29,8 +30,7 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     },
     "./css/main.css": "./dist/css/main.css"
   }
