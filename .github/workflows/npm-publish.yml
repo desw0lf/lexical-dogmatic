@@ -1,0 +1,79 @@
+# name: Publish to NPM + Create GitHub Release
+name: Create GitHub Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+env:
+  NODE_VER: '23.11.0'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VER }}
+      - run: npm install
+      - run: npm run build
+      # - run: npm test
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: npm-package
+          path: |
+            dist/**
+            README.md
+            package.json
+            LICENSE
+
+  # publish-npm:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   environment: gh-release
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: ${{ env.NODE_VER }}
+  #         registry-url: https://registry.npmjs.org/
+
+  #     - name: Download build artifact
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: npm-package
+  #         path: .
+
+  #     - run: npm publish
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+
+  publish-release:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: gh-release
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: npm-package
+          path: .
+
+      - name: Tar Gz artifact for release
+        run: tar -czvf release.tgz dist/** README.md package.json LICENSE
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2.2.1
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          body_path: CHANGELOG.md
+          files: release.tgz
