@@ -1,0 +1,274 @@
+@use "./_lexical-settings.scss" as settings;
+
+i.chevron-down {
+  background-color: transparent;
+  background-size: contain;
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  background-image: url(svg-encode("chevron-down.svg"));
+}
+
+i.palette {
+  background-image: url(svg-encode("palette.svg"));
+}
+
+i.bucket {
+  background-image: url(svg-encode("paint-bucket.svg"));
+}
+
+i.bold {
+  background-image: url(svg-encode("type-bold.svg"));
+}
+
+i.italic {
+  background-image: url(svg-encode("type-italic.svg"));
+}
+
+i.clear {
+  background-image: url(svg-encode("trash.svg"));
+}
+
+i.code {
+  background-image: url(svg-encode("code.svg"));
+}
+
+i.underline {
+  background-image: url(svg-encode("type-underline.svg"));
+}
+
+i.strikethrough {
+  background-image: url(svg-encode("type-strikethrough.svg"));
+}
+
+i.subscript {
+  background-image: url(svg-encode("type-subscript.svg"));
+}
+
+i.superscript {
+  background-image: url(svg-encode("type-superscript.svg"));
+}
+
+i.link {
+  background-image: url(svg-encode("link.svg"));
+}
+
+i.horizontal-rule {
+  background-image: url(svg-encode("horizontal-rule.svg"));
+}
+
+.icon.plus {
+  background-image: url(svg-encode("plus.svg"));
+}
+
+.icon.caret-right {
+  background-image: url(svg-encode("caret-right-fill.svg"));
+}
+
+.icon.dropdown-more {
+  background-image: url(svg-encode("dropdown-more.svg"));
+}
+
+.icon.font-color {
+  background-image: url(svg-encode("font-color.svg"));
+  position: relative;
+  background-position: center;
+  background-size: 18px !important;
+  background-repeat: no-repeat;
+  &::after {
+    content: " ";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 17px;
+    margin: auto;
+    width: 12px;
+    height: 3px;
+    // border-radius: 3px;
+    background: linear-gradient(to right, rgb(101, 84, 192) 25%, rgb(0, 184, 217) 25%, rgb(0, 184, 217) 50%, rgb(255, 153, 31) 50%, rgb(255, 153, 31) 75%, rgb(222, 53, 11) 75%);
+  }
+}
+
+.icon.font-family {
+  background-image: url(svg-encode("font-family.svg"));
+}
+
+.icon.bg-color {
+  background-image: url(svg-encode("bg-color.svg"));
+}
+
+.icon.table {
+  background-color: #6c757d;
+  mask-image: url(svg-encode("table.svg"));
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
+i.image {
+  background-image: url(svg-encode("file-image.svg"));
+}
+
+i.table {
+  background-image: url(svg-encode("table.svg"));
+}
+
+i.close {
+  background-image: url(svg-encode("multiply.svg"));
+}
+
+i.figma {
+  background-image: url(svg-encode("figma.svg"));
+}
+
+i.poll {
+  background-image: url(svg-encode("card-checklist.svg"));
+}
+
+i.tweet {
+  background-image: url(svg-encode("tweet.svg"));
+}
+
+i.youtube {
+  background-image: url(svg-encode("youtube.svg"));
+}
+
+.icon.left-align,
+i.left-align {
+  background-image: url(svg-encode("text-left.svg"));
+}
+
+i.center-align {
+  background-image: url(svg-encode("text-center.svg"));
+}
+
+i.right-align {
+  background-image: url(svg-encode("text-right.svg"));
+}
+
+i.justify-align {
+  background-image: url(svg-encode("justify.svg"));
+}
+
+i.indent {
+  background-image: url(svg-encode("indent.svg"));
+}
+
+i.markdown {
+  background-image: url(svg-encode("markdown.svg"));
+}
+
+i.outdent {
+  background-image: url(svg-encode("outdent.svg"));
+}
+
+i.undo {
+  background-image: url(svg-encode("arrow-counterclockwise.svg"));
+}
+
+i.redo {
+  background-image: url(svg-encode("arrow-clockwise.svg"));
+}
+
+i.sticky {
+  background-image: url(svg-encode("sticky.svg"));
+}
+
+i.mic {
+  background-image: url(svg-encode("mic.svg"));
+}
+
+i.import {
+  background-image: url(svg-encode("upload.svg"));
+}
+
+i.export {
+  background-image: url(svg-encode("download.svg"));
+}
+
+i.diagram-2 {
+  background-image: url(svg-encode("diagram-2.svg"));
+}
+
+i.user {
+  background-image: url(svg-encode("user.svg"));
+}
+
+i.equation {
+  background-image: url(svg-encode("plus-slash-minus.svg"));
+}
+
+i.gif {
+  background-image: url(svg-encode("filetype-gif.svg"));
+}
+
+i.copy {
+  background-image: url(svg-encode("copy.svg"));
+}
+
+i.success {
+  background-image: url(svg-encode("success.svg"));
+}
+
+i.prettier {
+  background-image: url(svg-encode("prettier.svg"));
+}
+
+i.prettier-error {
+  background-image: url(svg-encode("prettier-error.svg"));
+}
+
+i.page-break,
+.icon.page-break {
+  background-image: url(svg-encode("scissors.svg"));
+}
+
+.icon.paragraph {
+  background-image: url(svg-encode("text-paragraph.svg"));
+}
+
+.icon.h1 {
+  background-image: url(svg-encode("type-h1.svg"));
+}
+
+.icon.h2 {
+  background-image: url(svg-encode("type-h2.svg"));
+}
+
+.icon.h3 {
+  background-image: url(svg-encode("type-h3.svg"));
+}
+
+.icon.h4 {
+  background-image: url(svg-encode("type-h4.svg"));
+}
+
+.icon.h5 {
+  background-image: url(svg-encode("type-h5.svg"));
+}
+
+.icon.h6 {
+  background-image: url(svg-encode("type-h6.svg"));
+}
+
+.icon.bullet-list,
+.icon.bullet {
+  background-image: url(svg-encode("list-ul.svg"));
+}
+
+.icon.check-list,
+.icon.check {
+  background-image: url(svg-encode("square-check.svg"));
+}
+
+.icon.numbered-list,
+.icon.number {
+  background-image: url(svg-encode("list-ol.svg"));
+}
+
+.icon.quote {
+  background-image: url(svg-encode("chat-square-quote.svg"));
+}
+
+.icon.code {
+  background-image: url(svg-encode("code.svg"));
+}

@@ -1,0 +1,36 @@
+@use "sass:color";
+$coloursPerLine: 8;
+$colourDropdownPadding: 8px;
+$colourSize: 16px;
+$colourGap: 8px;
+$colourDropdownWidth: ($colourDropdownPadding * 2) + ($coloursPerLine * $colourSize) + (($coloursPerLine - 1) * $colourGap);
+$colourActiveColour: #ffc255;
+
+.lexical-color-picker-wrapper {
+  padding: $colourDropdownPadding;
+  max-width: $colourDropdownWidth;
+}
+
+.lexical-color-picker-basic-color {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $colourGap;
+  margin: 0;
+  padding: 0;
+  button {
+    border: 1px solid hsl(0deg 0% 0% / 25%);
+    border-radius: 4px;
+    height: $colourSize;
+    width: $colourSize;
+    cursor: pointer;
+    list-style-type: none;
+    box-shadow: 0px 0px 0px 2px color.adjust($colourActiveColour, $alpha: -1);
+    transition: box-shadow 0.1s ease-in-out;
+    &:hover {
+      box-shadow: 0px 0px 0px 2px color.adjust($colourActiveColour, $alpha: -0.4);
+    }
+    &.active {
+      box-shadow: 0px 0px 0px 3px $colourActiveColour;
+    }
+  }
+}

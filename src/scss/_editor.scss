@@ -1,0 +1,193 @@
+.editor-code {
+  display: block;
+  padding: 8px;
+  line-height: 1.53;
+  font-size: 13px;
+  margin: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  tab-size: 2;
+  /* white-space: pre; */
+  overflow-x: auto;
+  position: relative;
+  &[data-gutter] {
+    padding-left: 52px;
+    &:before {
+      content: attr(data-gutter);
+      position: absolute;
+      background-color: #eee;
+      left: 0;
+      top: 0;
+      border-right: 1px solid #ccc;
+      padding: 8px;
+      color: #777;
+      white-space: pre-wrap;
+      text-align: right;
+      min-width: 25px;
+    }
+  }
+  &[data-highlight-language]:after {
+    content: attr(data-highlight-language);
+    top: 0;
+    right: 3px;
+    padding: 3px;
+    font-size: 10px;
+    text-transform: uppercase;
+    position: absolute;
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.editor-code[data-gutter]:before {
+  content: attr(data-gutter);
+  position: absolute;
+  background-color: #eee;
+  left: 0;
+  top: 0;
+  border-right: 1px solid #ccc;
+  padding: 8px;
+  color: #777;
+  white-space: pre-wrap;
+  text-align: right;
+  min-width: 25px;
+}
+
+.editor-text-code, .editor-code {
+  background-color: rgb(240, 242, 245);
+  font-family: Menlo, Consolas, Monaco, monospace;
+}
+
+.editor-text-code {
+  padding: 1px 2px;
+  font-size: 94%;
+}
+
+.editor-text-bold {
+  font-weight: bold;
+}
+
+.editor-text-italic {
+  font-style: italic;
+}
+
+.editor-text-underline {
+  text-decoration: underline;
+}
+
+.editor-text-strikethrough {
+  text-decoration: line-through;
+}
+
+.editor-text-underlineStrikethrough {
+  text-decoration: underline line-through;
+}
+
+.editor-link {
+  color: rgb(33, 111, 219);
+  text-decoration: none;
+} // overwritten
+
+// .editor-tokenComment {
+//   color: slategray;
+// }
+
+// .editor-tokenPunctuation {
+//   color: #999;
+// }
+
+// .editor-tokenProperty {
+//   color: #905;
+// }
+
+// .editor-tokenSelector {
+//   color: #690;
+// }
+
+// .editor-tokenOperator {
+//   color: #9a6e3a;
+// }
+
+// .editor-tokenAttr {
+//   color: #07a;
+// }
+
+// .editor-tokenVariable {
+//   color: #e90;
+// }
+
+// .editor-tokenFunction {
+//   color: #dd4a68;
+// }
+
+.editor-paragraph {
+  margin: 0;
+  margin-bottom: 8px;
+  position: relative;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.editor-heading-h3 {
+  font-size: 1.4rem;
+}
+
+.editor-heading {
+  &-h1, &-h2, &-h3 {
+    margin-bottom: 0;
+    line-height: 1.45;
+  }
+}
+// .editor-heading-h1 {
+//   font-size: 24px;
+//   color: rgb(5, 5, 5);
+//   font-weight: 400;
+//   margin: 0;
+//   margin-bottom: 12px;
+//   padding: 0;
+// }
+
+// .editor-heading-h2 {
+//   font-size: 15px;
+//   color: rgb(101, 103, 107);
+//   font-weight: 700;
+//   margin: 0;
+//   margin-top: 10px;
+//   padding: 0;
+// }
+
+.editor-quote {
+  margin: 0;
+  margin-left: 18px;
+  font-size: 15px;
+  // color: rgb(101, 103, 107);
+  // border-left-color: rgb(206, 208, 212);
+  border-left-color: rgba(0, 0, 0, 0.13);
+  background-color: rgba(0, 0, 0, 0.02);
+  border-left-width: 4px;
+  border-left-style: solid;
+  padding: 4px 0 4px 12px;
+}
+
+.editor-list-ol, .editor-list-ul {
+  padding: 0;
+  margin: 0;
+  margin-left: 16px;
+}
+
+ul.editor-list-ul {
+  list-style-type: disc;
+}
+
+ol.editor-list-ol {
+  list-style-type: decimal;
+}
+
+.editor-listitem {
+  margin: 8px 32px 8px 32px;
+}
+
+.editor-nested-listitem {
+  list-style-type: none;
+}

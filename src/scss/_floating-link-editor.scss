@@ -1,0 +1,123 @@
+@use "sass:color";
+@use "./_lexical-settings.scss" as settings;
+
+$lexical-link-editor-radius: 4px;
+$lexical-link-editor-margin: 3px;
+
+.lexical__link-editor {
+  &:empty {
+    visibility: hidden;
+  }
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  // max-width: 400px;
+  // width: 100%;
+  opacity: 0;
+  background-color: #f3f5f7;
+  // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: $lexical-link-editor-radius;
+  transition: opacity 0.5s;
+  will-change: transform;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  padding-right: 4px + $lexical-link-editor-margin;
+  > div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 4px;
+  }
+  .link-input, a {
+    // height: 36px;
+    // line-height: 36px;
+    font-size: 14px;
+    padding: 1px 5px;
+    border: 2px solid transparent;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .link-field__wrapper {
+    margin: $lexical-link-editor-margin;
+    margin-right: 0;
+    flex-grow: 1;
+    width: 300px;
+  }
+  .link-input {
+    // box-sizing: border-box;
+    // margin: 12px 12px;
+    // padding: 8px 12px;
+    // border-radius: 15px;
+    background-color: #fff;
+    border-radius: $lexical-link-editor-radius;
+    // font-size: 15px;
+    color: rgb(5, 5, 5);
+    outline: 0;
+    position: relative;
+    font-family: inherit;
+    border-color: #e7e7e7;
+    // border: 1px solid #e7e7e7;
+    transition: border-color 0.3s ease-in-out;
+    &:hover, &:active, &:focus {
+      border-color: #6C9DEB;
+    }
+  }
+  .link-view {
+    // display: block;
+    // width: calc(100% - 24px);
+    // margin: 8px 12px;
+    // padding: 8px 12px;
+    // border-radius: 15px;
+    // font-size: 15px;
+    color: rgb(5, 5, 5);
+    border: 0;
+    outline: 0;
+    position: relative;
+    font-family: inherit;
+    a {
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+  [role="button"] {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    // border: 1px solid #dee5eb;
+    // background: white;
+    height: calc(100% - $lexical-link-editor-margin * 2);
+    border-radius: $lexical-link-editor-radius;
+    transition: background-color 0.2s ease-in-out;
+    &:hover, &:active, &:focus {
+      // background: mix(#58809D, white, 30%);
+      background: color.adjust(#58809D, $alpha: -0.8);
+    }
+    .link-icon {
+      width: 16px;
+      height: 16px;
+      background-size: 16px;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: block;
+    }
+  }
+}
+
+.lexical__link-editor .link {
+  &-edit .link-icon {
+    background-image: url(svg-encode("link-editor/pen.svg"));
+  }
+  &-trash .link-icon {
+    background-image: url(svg-encode("link-editor/trash.svg"));
+  }
+  &-cancel .link-icon {
+    background-image: url(svg-encode("link-editor/multiply.svg"));
+  }
+  &-confirm .link-icon {
+    background-image: url(svg-encode("link-editor/check.svg"));
+  }
+}
