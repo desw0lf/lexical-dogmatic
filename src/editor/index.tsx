@@ -8,14 +8,14 @@ import { InitialConfigType, LexicalComposer } from "@lexical/react/LexicalCompos
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
-import LexicalClickableLinkPlugin from "@lexical/react/LexicalClickableLinkPlugin";
+import { ClickableLinkPlugin } from "@lexical/react/LexicalClickableLinkPlugin";
 import { HorizontalRulePlugin } from "@lexical/react/LexicalHorizontalRulePlugin";
 // import { LinkPlugin } from "@lexical/react/LexicalLinkPlugin";
 import { ListPlugin } from "@lexical/react/LexicalListPlugin";
 import ListMaxIndentLevelPlugin from "./plugins/list-max-indent-level-plugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 // import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
-import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
+import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
 import LinkPlugin from "./plugins/link-plugin";
 import AutoLinkPlugin from "./plugins/auto-link-plugin";
 import TabFocusPlugin from "./plugins/tab-focus-plugin";
@@ -136,7 +136,7 @@ export const LexicalRichEditor: React.FC<LexicalRichEditorProps> = ({
           <HistoryPlugin />
           <ListPlugin />
           <LinkPlugin />
-          {type !== "editable" && <LexicalClickableLinkPlugin />}
+          {type !== "editable" && <ClickableLinkPlugin />}
           <AutoLinkPlugin />
           <ListMaxIndentLevelPlugin maxDepth={7} />
           {/* <MyCustomAutoFocusPlugin /> */}
